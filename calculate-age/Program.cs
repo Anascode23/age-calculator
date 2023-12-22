@@ -1,9 +1,9 @@
 ﻿Console.WriteLine("Please enter when you were born to calculate you age: ");
 var input = Console.ReadLine();
-
-if (DateTime.TryParse(input, out var dateTime))
+if (int.TryParse(input, out var year))
 {
-    int year = dateTime.Year;
-    Console.WriteLine("datetime object now" + year);
+    var birthdate = new DateTime(year,1,1);
+    var currentyear =  DateTime.Now.Year;
+    var age =  Convert.ToInt32(currentyear - birthdate.Year);
+    Console.WriteLine("You are " + age + " years old");
 }
-//Console.WriteLine(age);
